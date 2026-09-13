@@ -1,0 +1,19 @@
+.signin-preview {
+  align-self: flex-end;
+  width: min(45vw, 300px);
+  opacity: 0;
+}
+
+.signin-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 18px 30px rgba(27, 18, 13, 0.35));
+}
+
+@media (max-width: 720px) {
+  .signin-preview {
+    align-self: center;
+    width: min(75vw, 300px);
+  }
+}

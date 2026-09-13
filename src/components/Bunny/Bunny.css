@@ -1,0 +1,71 @@
+.bunny {
+  position: fixed;
+  left: clamp(1rem, 6vw, 4rem);
+  bottom: clamp(1.25rem, 8vh, 4rem);
+  z-index: 40;
+  width: clamp(100px, 12vw, 190px);
+  pointer-events: none;
+  will-change: transform;
+  transform-origin: bottom center;
+  opacity: 0;
+}
+
+.bunny-frame {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 14px rgba(27, 18, 13, 0.25));
+}
+
+.bunny-frame--mirrored {
+  transform: scaleX(-1);
+}
+
+.bunny-caption {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0.85rem;
+  padding: 0.55rem 0.9rem;
+  width: max-content;
+  max-width: 170px;
+  background: var(--color-bg-raised);
+  border: 1.5px dashed var(--color-border);
+  border-radius: 14px;
+  box-shadow: 0 10px 14px rgba(27, 18, 13, 0.2);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  line-height: 1.35;
+  color: var(--color-fg);
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bunny-caption::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 8px solid var(--color-bg-raised);
+}
+
+@media (max-width: 640px) {
+  .bunny {
+    width: clamp(78px, 24vw, 130px);
+    left: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  .bunny-caption {
+    font-size: 0.68rem;
+    max-width: 130px;
+    padding: 0.45rem 0.7rem;
+  }
+}

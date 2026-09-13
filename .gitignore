@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# AI tooling artifacts
+.claude
+.agents
+skills-lock.json
+*.tsbuildinfo
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
